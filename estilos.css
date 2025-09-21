@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #87CEEB, #B0E0E6); /* Cielo degradado */
+    }
+
+    .campo {
+        /* position: relative; */
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom, #8FBC8F, #9ACD32); /* Suelo del campo */
+    }
+
+    .sol {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        background: #FFD700;
+        border-radius: 50%;
+        box-shadow: 0 0 20px #FFD700;
+    }
+
+    .girasol {
+        position: absolute;
+        bottom: 100px;
+        width: 80px;
+        height: 180px;
+        animation: sway 5s infinite ease-in-out;
+    }
+
+    .girasol .cabeza {
+        width: 80px;
+        height: 80px;
+        background: #8B4513; /* Centro del girasol */
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .girasol .petalo {
+        position: absolute;
+        width: 30px;
+        height: 50px;
+        background: #FFD700; /* Amarillo del pétalo */
+        border-radius: 50%;
+        top: 15px;
+        left: 25px;
+    }
+
+    .petalo.p1 { transform: rotate(0deg) translateY(-30px); }
+    .petalo.p2 { transform: rotate(30deg) translateY(-30px); }
+    .petalo.p3 { transform: rotate(60deg) translateY(-30px); }
+    .petalo.p4 { transform: rotate(90deg) translateY(-30px); }
+    .petalo.p5 { transform: rotate(120deg) translateY(-30px); }
+    .petalo.p6 { transform: rotate(150deg) translateY(-30px); }
+    .petalo.p7 { transform: rotate(180deg) translateY(-30px); }
+    .petalo.p8 { transform: rotate(210deg) translateY(-30px); }
+    .petalo.p9 { transform: rotate(240deg) translateY(-30px); }
+    .petalo.p10 { transform: rotate(270deg) translateY(-30px); }
+    .petalo.p11 { transform: rotate(300deg) translateY(-30px); }
+    .petalo.p12 { transform: rotate(330deg) translateY(-30px); }
+
+    .girasol .tallo {
+        width: 10px;
+        height: 100px;
+        background: #228B22; /* Verde del tallo */
+        position: absolute;
+        bottom: 0;
+        left: 35px;
+    }
+
+    .flor-amarilla {
+        position: absolute;
+        bottom: 50px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .flor-amarilla .petalo-amarillo {
+        width: 20px;
+        height: 20px;
+        background: #FFFF00;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .petalo-amarillo.pa1 { top: 0; left: 10px; }
+    .petalo-amarillo.pa2 { top: 10px; left: 0; }
+    .petalo-amarillo.pa3 { top: 10px; right: 0; }
+    .petalo-amarillo.pa4 { bottom: 0; left: 10px; }
+    .petalo-amarillo.centro {
+        width: 15px;
+        height: 15px;
+        background: #FFD700;
+        border-radius: 50%;
+        top: 12.5px;
+        left: 12.5px;
+    }
+
+    .corazon {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        opacity: 0.8;
+        animation: float 6s infinite ease-in-out;
+    }
+
+    .corazon::before,
+    .corazon::after {
+        content: '';
+        position: absolute;
+        left: 25px;
+        top: 0;
+        width: 25px;
+        height: 40px;
+        background: #FF69B4; /* Rosa del corazón */
+        border-radius: 25px 25px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+
+    .corazon::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+
+    /* Posicionamiento de los elementos */
+    .girasol1 { left: 10%; bottom: 120px; transform: scale(0.8); }
+    .girasol2 { left: 30%; bottom: 150px; transform: scale(1.1); }
+    .girasol3 { left: 50%; bottom: 130px; }
+
+
+    .flor1 { left: 5%; bottom: 60px; }
+    .flor2 { left: 25%; bottom: 40px; }
+    .flor3 { left: 45%; bottom: 70px; }
+    .flor4 { left: 65%; bottom: 50px; }
+    .flor5 { left: 85%; bottom: 60px; }
+
+    .corazon1 { top: 30%; left: 15%; animation-delay: 0s; }
+    .corazon2 { top: 20%; left: 30%; animation-delay: -2s; }
+    .corazon3 { top: 25%; left: 65%; animation-delay: -4s; }
+    .corazon4 { top: 50%; left: 85%; animation-delay: -1s; }
+
+    /* Animaciones */
+    @keyframes sway {
+        0%, 100% { transform: rotate(2deg); }
+        50% { transform: rotate(-2deg); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0); }
+        50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+
+    .nombre{
+        position: absolute;
+        z-index: 100000;
+        top: 30%;
+        left: 20%;
+        text-align: center; /* Centra el texto si se divide en varias líneas */
+    }
+
+    .nombre-estilo{
+        font-size: 50px;
+        font-family: cursive;
+        color: white;
+        margin: 5px 0; /* Reduce el espacio vertical entre los H1 */
+    }
+
+    /* =============================================== */
+    /* ESTILOS RESPONSIVE PARA MÓVILES */
+    /* Se aplican en pantallas de 768px de ancho o menos */
+    /* =============================================== */
+    @media (max-width: 768px) {
+
+        .nombre{
+            top: 35%;
+            left: 3%;
+        }
+
+        .nombre-estilo {
+            font-size: 23px; /* Reduce el tamaño de la fuente */
+        }
+
+        .sol {
+            width: 60px;
+            height: 60px;
+            top: 20px;
+            left: 20px;
+        }
+        
+        /* Ajustamos la escala general de los girasoles y su posición */
+        .girasol1 { left: 5%; bottom: 100px; transform: scale(0.6); }
+        .girasol2 { left: 35%; bottom: 120px; transform: scale(0.8); }
+        .girasol3 { left: 66%; bottom: 110px; transform: scale(0.7) translateX(-50%);} /* Centramos el del medio */
+
+        /* Hacemos más pequeñas las flores y ajustamos su posición */
+        .flor-amarilla {
+            transform: scale(0.8);
+        }
+        .flor1 { left: 2%; bottom: 60px; }
+        .flor2 { left: 20%; bottom: 40px; }
+        .flor3 { left: 45%; bottom: 70px; }
+        .flor4 { left: 70%; bottom: 50px; }
+        .flor5 { left: 88%; bottom: 60px; }
+
+        /* Hacemos los corazones más pequeños */
+        .corazon {
+            transform: scale(0.7);
+        }
+        .corazon1 { top: 30%; left: 10%; }
+        .corazon2 { top: 50%; left: 20%; }
+        .corazon3 { top: 30%; left: 70%; }
+        .corazon4 { top: 50%; left: 80%; }
+
+        /* Hacemos la animación de flotar más sutil */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+    }
